@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* mater o main so com seu tamanho definitivo*/
+
+}
+ul{    list-style: none;
+}
+body{
+    background-image: url(../complemento/Fundo.jpg);
+    background-position:  top center; /*no centro da tela cima*/
+    background-size: 100% auto; /*cubra todo o tamanho da tela*/
+    background-repeat:no-repeat ; /*nao repeti*/
+    background-color: #121214;
+}
+body *{
+    font-family: 'Inter',sans-serif;
+    line-height: 160%; /*altura da linha*/
+}
+header{
+    margin-top:32px;
+    height:calc(120px + 32px) ;
+}
+header div{
+    width: 120px;
+    margin: auto; /* usando margin pq a div nao tem text*/
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+    display: flex; /*assim sobre pondo*/
+    padding: 4px;
+
+    transition: transform .3s; /*tempo do efeito do mouse*/
+}
+header div:hover{ /*efeito de mouse em cima*/
+    transform: scale(1.1);
+}
+
+header img{
+    width: 100%; /*Img 100% a div */
+    border-radius: 50%;
+}
+
+main{
+    max-width: 580px;
+    width: 90%; /*oucupa 90% da pagina*/
+    margin: 32px auto;
+
+    display: flex; /*permitindo um elemento ao lado do outro dentro do main*/
+    flex-direction: column; /*flex em coluna*/
+    gap: 24px; /*para q aja espaco*/
+
+    
+}
+
+
+section{
+    color: white;
+
+   
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+section div{
+    background-color:#2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+section h2{
+    letter-spacing: -0.47px;
+}
+
+section p{
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+
+section ul{
+    display: flex;
+    flex-wrap: wrap; /*ajusta os ul automaticamente*/
+    gap: 16px; /*modifica largura entre eles dentro do ul*/
+
+    margin-top: 24px;
+}
+section ul li{
+   transition: transform .3s;
+}
+section ul li:hover{
+    transform: scale(1.1);
+}
+
+.games-list img{
+    width: 90px;
+    border-radius: 8px;
+}
+.channel-list img{
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+/* Animation 1  do header*/
+
+header div{
+    animation: fromTop .7s .2s backwards; 
+}
+
+@keyframes fromTop{    /*Inicio da Animacao */
+    from{
+        opacity: 0;              /*começa animacao porexe */
+        transform: translateY(-30px);
+    }
+    to{                /*para final da animacao porexe */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animation 2 dos section */
+
+main section{
+    animation: fromBottom .7s backwards ;
+}
+main section:nth-child(1){   /*filho section n1*/
+    animation-delay: 0;
+}
+main section:nth-child(2){    /*filho section n2*/
+    animation-delay: .3s;
+}
+main section:nth-child(3){    /*filho section n3*/
+    animation-delay: .6s;
+}
+
+@keyframes fromBottom{  /*defeine a animacao de fato...*/
+    from{
+        opacity: 0;
+        transform:translateX(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
